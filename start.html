@@ -3,101 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ابدأ مع FrameFree</title>
+  <title>ابدأ مشروعك | FrameFree</title>
   <style>
     body {
-      background-color: #0b0b0b;
-      color: #ffffff;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      text-align: center;
-      padding: 20px;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(120deg, #0e0e0e, #0a0a0a);
       overflow: hidden;
+      color: #00ffe0;
+      text-align: center;
+      position: relative;
     }
+
+    /* خلفية متحركة خفيفة */
+    .background {
+      position: absolute;
+      top: 0; left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0,255,224,0.1) 20%, transparent 80%) center / 50% 50% repeat;
+      animation: moveBackground 15s linear infinite;
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-50%, -50%); }
+    }
+
     img {
-      width: 140px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px #00ffe0);
+      width: 120px;
+      margin-bottom: 15px;
     }
+
     h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #00ffe0;
-      text-shadow: 0 0 10px #00ffe0;
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
     }
+
     p {
-      font-size: 1.3rem;
-      color: #eeeeee;
-      margin-bottom: 2.5rem;
-      max-width: 650px;
-      line-height: 1.8;
+      font-size: 1.2rem;
+      color: #a0f0e0;
+      max-width: 600px;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
     }
-    code {
-      background: #1a1a1a;
-      padding: 2px 6px;
-      border-radius: 4px;
-      color: #00ffe0;
-      font-weight: bold;
+
+    .guide {
+      color: #ffffff;
+      font-size: 1rem;
+      margin-top: 1rem;
+      animation: pulse 2.5s infinite;
     }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
+    }
+
     .buttons {
       display: flex;
       gap: 15px;
       flex-wrap: wrap;
       justify-content: center;
+      margin-top: 1.5rem;
     }
+
     a {
       background-color: #00ffe0;
-      color: #0b0b0b;
+      color: #0e0e0e;
       text-decoration: none;
-      padding: 0.9rem 2.2rem;
+      padding: 0.8rem 2rem;
       border-radius: 10px;
-      font-size: 1.1rem;
       font-weight: bold;
-      box-shadow: 0 0 15px #00ffe0;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 0 15px rgba(0,255,224,0.5);
     }
+
     a:hover {
       background-color: #00c7b3;
-      color: #ffffff;
-      box-shadow: 0 0 30px #00ffe0;
       transform: scale(1.05);
-    }
-    .glow {
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, #00ffe055, transparent 70%);
-      filter: blur(60px);
-      animation: move 6s infinite alternate ease-in-out;
-      z-index: 0;
-    }
-    @keyframes move {
-      0% { transform: translate(-30%, -30%); }
-      100% { transform: translate(30%, 30%); }
     }
   </style>
 </head>
 <body>
 
-  <div class="glow"></div>
+  <div class="background"></div>
 
   <img src="logo.png" alt="شعار FrameFree">
 
-  <h1>ابدأ رحلتك مع FrameFree</h1>
+  <h1>ابدأ مشروعك</h1>
+
   <p>
     🖥️ أنشئ مجلد خاص بك على جهازك.<br>
-    📄 أنشئ ملف <code>index.html</code> وضع فيه أفكارك.<br>
+    📄 أنشئ ملف <code>index.html</code> وضع فيه أفكارك الخاصة.<br>
     🌍 تعلم رفع الملفات على GitHub.<br>
     ⚡ اجعل صفحتك جزءًا من ثورة FrameFree.
   </p>
 
+  <div class="guide">📌 اضغط وابدأ</div>
+
   <div class="buttons">
+    <a href="https://github.com/new" target="_blank">🚀 أنشئ مستودع جديد الآن</a>
     <a href="index.html">⬅️ العودة للصفحة الرئيسية</a>
-    <a href="https://github.com/new" target="_blank">🚀 ابدأ مشروعك الآن</a>
   </div>
 
 </body>
