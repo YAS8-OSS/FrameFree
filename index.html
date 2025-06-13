@@ -1,48 +1,41 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FrameFree - اصنع نظامك الخاص</title>
   <style>
     body {
-      background-color: #0d0d0d;
+      background-color: #0f0f0f;
       color: #00ffe0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
       margin: 0;
       text-align: center;
-      padding: 0 15px;
-    }
-    img {
-      width: 150px;
-      margin-bottom: 20px;
     }
     h1 {
-      font-size: 3.5rem;
+      font-size: 4rem;
       margin-bottom: 1rem;
-      color: #00ffe0;
-      letter-spacing: 2px;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #ffffff;
     }
     p {
       max-width: 600px;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
+      line-height: 1.8;
       color: #a0f0e0;
       margin-bottom: 2rem;
-      line-height: 1.8;
     }
-    a button {
+    .slogan {
+      font-size: 1.3rem;
+      color: #7fffea;
+      margin-bottom: 1rem;
+    }
+    button {
       background-color: #00ffe0;
-      color: #0d0d0d;
+      color: #0f0f0f;
       border: none;
       padding: 1rem 3rem;
       font-size: 1.2rem;
@@ -50,32 +43,25 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    a button:hover {
+    button:hover {
       background-color: #00c7b3;
     }
   </style>
 </head>
 <body>
 
-
-
-  <!-- اسم المشروع -->
   <h1>FrameFree</h1>
 
-  <!-- شعار المشروع -->
-  <h2>اصنع نظامك الخاص</h2>
+  <div class="slogan">شعار FrameFree</div>
 
   <p>
-    لا تتبع أحد.<br />
-    هنا تبدأ ثورتك.<br />
-    كُن أنت النظام.
+    اصنع نظامك الخاص.<br>
+    لا تتبع أحد.<br>
+    هنا تبدأ ثورتك.<br>
+    <strong>كُن أنت النظام.</strong>
   </p>
 
-  <!-- زر البداية -->
-  <a href="start.html">
-    <button>ابدأ الآن</button>
-  </a>
+  <button onclick="location.href='start.html'">ابدأ الآن</button>
 
 </body>
 </html>
-
