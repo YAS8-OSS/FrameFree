@@ -25,7 +25,7 @@
       max-width: 600px;
       font-size: 1.5rem;
       line-height: 1.8;
-      color: #ffffff; /* <-- هنا صار أبيض */
+      color: #ffffff; /* النص أبيض */
       margin-bottom: 2rem;
     }
     .slogan {
@@ -38,13 +38,24 @@
       color: #0f0f0f;
       border: none;
       padding: 1rem 3rem;
-      font-size: 1.2rem;
-      border-radius: 10px;
+      font-size: 1.3rem;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 0 20px #00ffe0;
+      animation: glow 2s infinite alternate;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
     button:hover {
       background-color: #00c7b3;
+      transform: scale(1.05);
+    }
+    @keyframes glow {
+      from {
+        box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0, 0 0 30px #00ffe0;
+      }
+      to {
+        box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0, 0 0 60px #00ffe0;
+      }
     }
   </style>
 </head>
@@ -52,6 +63,7 @@
 
   <h1>FrameFree</h1>
 
+  
   <p>
     اصنع نظامك الخاص.<br>
     لا تتبع أحد.<br>
