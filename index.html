@@ -3,47 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>عن FrameFree</title>
+  <title>FrameFree - ثورة الأنظمة</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
     body {
-      background-color: #0f0f0f;
+      background-color: #121212;
       color: #00ffe0;
-      font-family: 'Cairo', sans-serif;
-      padding: 30px;
-      line-height: 1.8;
-      max-width: 800px;
-      margin: 0 auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
     }
     h1 {
       font-size: 3rem;
+      margin-bottom: 0.5rem;
       color: #00ffe0;
-      margin-bottom: 1rem;
     }
     p {
+      max-width: 600px;
       font-size: 1.2rem;
       color: #a0f0e0;
+      margin-bottom: 2rem;
+      line-height: 1.5;
     }
-    a {
-      color: #00ffe0;
-      text-decoration: underline;
+    button {
+      background-color: #00ffe0;
+      color: #121212;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #00c7b3;
     }
   </style>
 </head>
 <body>
-  <h1>عن FrameFree</h1>
+  <h1>FrameFree</h1>
   <p>
-    FrameFree هو مشروع مستقل يهدف إلى تمكين الأفراد من بناء أنظمتهم الخاصة بحرية، دون الحاجة للالتزام بأنظمة أو قيود مسبقة.
+    اصنع نظامك الخاص.<br />
+    لا تتبع أحد.<br />
+    هنا تبدأ ثورتك.
   </p>
-  <p>
-    نحن نؤمن أن كل شخص قادر على صناعة طريقه الخاص، وأنه من حق الجميع إنشاء بيئات رقمية تعكس فكرهم وروحهم بدون تحكم خارجي.
-  </p>
-  <p>
-    هذه ليست مجرد صفحة، إنها بداية ثورة في عالم الأنظمة الرقمية.
-  </p>
-  <p>
-    <a href="index.html">العودة إلى الصفحة الرئيسية</a>
-  </p>
+  <button onclick="window.location.href='start.html'">ابدأ الآن</button>
 </body>
 </html>
+
 
