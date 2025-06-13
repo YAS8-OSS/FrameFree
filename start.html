@@ -6,71 +6,94 @@
   <title>ابدأ مع FrameFree</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #00ffe0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      justify-content: center;
       height: 100vh;
-      text-align: center;
-      padding: 20px;
+      flex-direction: column;
+      animation: fadeIn 2s ease forwards;
     }
-    img {
-      width: 150px;
-      margin-bottom: 20px;
+
+    /* خلفية دوائر متحركة */
+    .background {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+      overflow: hidden;
     }
+
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 255, 224, 0.15);
+      animation: move 20s linear infinite;
+    }
+
+    @keyframes move {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0.2; }
+      100% { transform: translateY(-20vh) scale(1.5); opacity: 0; }
+    }
+
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00ffe0;
     }
+
     p {
-      font-size: 1.2rem;
-      color: #a0f0e0;
-      margin-bottom: 2rem;
+      font-size: 1.3rem;
       max-width: 600px;
-      line-height: 1.6;
+      text-shadow: 0 0 8px #000;
+      margin-bottom: 2rem;
+      color: #e0fefe;
     }
-    .buttons {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    button {
+      background-color: #fff;
+      color: #0f0f0f;
+      border: none;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #00ffe0;
+      animation: glow 2s infinite alternate;
+      transition: transform 0.3s ease;
     }
-    a {
-      background-color: #00ffe0;
-      color: #0e0e0e;
-      text-decoration: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background-color 0.3s;
+
+    button:hover {
+      transform: scale(1.05);
     }
-    a:hover {
-      background-color: #00c7b3;
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0; }
+      to { box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <!-- الشعار -->
-    <img src="logo.png" alt="شعار FrameFree">
-
-  <!-- العنوان والنص -->
-  <h1>ابدأ رحلتك مع FrameFree</h1>
-  <p>
-    🖥️ أنشئ مجلد خاص بك على جهازك.<br>
-    📄 أنشئ ملف <code>index.html</code> وضع فيه أفكارك.<br>
-    🌍 تعلم رفع الملفات على GitHub.<br>
-    ⚡ اجعل صفحتك جزءًا من ثورة FrameFree.
-  </p>
-
-  <!-- الأزرار -->
-  <div class="buttons">
-    <a href="index.html">⬅️ العودة للصفحة الرئيسية</a>
-    <a href="https://github.com/new" target="_blank">🚀 ابدأ مشروعك الآن</a>
+  <div class="background">
+    <div class="circle" style="width: 200px; height: 200px; left: 10%; animation-delay: 0s;"></div>
+    <div class="circle" style="width: 300px; height: 300px; left: 50%; animation-delay: 5s;"></div>
+    <div class="circle" style="width: 150px; height: 150px; left: 80%; animation-delay: 2s;"></div>
   </div>
+
+  <h1>ابدأ مشروعك الآن</h1>
+  <p>أنشئ نظامك الخاص. لا تتبع أحد. اجعل أفكارك حرة.</p>
+  <button onclick="alert('🚀 انطلق!')">ابدأ مشروعك الآن</button>
 
 </body>
 </html>
+
