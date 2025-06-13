@@ -17,19 +17,22 @@
       margin: 0;
       text-align: center;
     }
+    img {
+      width: 180px;
+      margin-bottom: 20px;
+    }
     h1 {
       font-size: 3rem;
       margin-bottom: 0.5rem;
-      color: #00ffe0;
     }
     p {
       max-width: 600px;
       font-size: 1.2rem;
       color: #a0f0e0;
       margin-bottom: 2rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
-    button {
+    a button {
       background-color: #00ffe0;
       color: #121212;
       border: none;
@@ -39,22 +42,29 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    button:hover {
+    a button:hover {
       background-color: #00c7b3;
     }
   </style>
 </head>
 <body>
+
+  <!-- شعار المشروع -->
+  <img src="logo.png.png" alt="شعار FrameFree" />
+
+
   <h1>FrameFree</h1>
   <p>
     اصنع نظامك الخاص.<br />
     لا تتبع أحد.<br />
     هنا تبدأ ثورتك.
   </p>
-  <button onclick="window.location.href='start.html'">ابدأ الآن</button>
-  <a href="about.html" style="color:#00ffe0; margin-top: 20px; display: block;">عن المشروع</a>
+
+  <!-- زر يبدأ تجربة المستخدم، يفتح start.html -->
+  <a href="start.html">
+    <button>ابدأ الآن</button>
+  </a>
 
 </body>
 </html>
-
 
