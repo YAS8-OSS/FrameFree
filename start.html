@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -6,8 +6,8 @@
   <title>ابدأ مع FrameFree</title>
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #00ffe0;
+      background-color: #0b0b0b;
+      color: #ffffff;
       font-family: 'Segoe UI', Tahoma, sans-serif;
       display: flex;
       flex-direction: column;
@@ -16,21 +16,32 @@
       height: 100vh;
       text-align: center;
       padding: 20px;
+      overflow: hidden;
     }
     img {
-      width: 150px;
+      width: 140px;
       margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px #00ffe0);
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
+      color: #00ffe0;
+      text-shadow: 0 0 10px #00ffe0;
     }
     p {
-      font-size: 1.2rem;
-      color: #a0f0e0;
-      margin-bottom: 2rem;
-      max-width: 600px;
-      line-height: 1.6;
+      font-size: 1.3rem;
+      color: #eeeeee;
+      margin-bottom: 2.5rem;
+      max-width: 650px;
+      line-height: 1.8;
+    }
+    code {
+      background: #1a1a1a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00ffe0;
+      font-weight: bold;
     }
     .buttons {
       display: flex;
@@ -40,24 +51,42 @@
     }
     a {
       background-color: #00ffe0;
-      color: #0e0e0e;
+      color: #0b0b0b;
       text-decoration: none;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
+      padding: 0.9rem 2.2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
       font-weight: bold;
-      transition: background-color 0.3s;
+      box-shadow: 0 0 15px #00ffe0;
+      transition: all 0.3s ease;
     }
     a:hover {
       background-color: #00c7b3;
+      color: #ffffff;
+      box-shadow: 0 0 30px #00ffe0;
+      transform: scale(1.05);
+    }
+    .glow {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, #00ffe055, transparent 70%);
+      filter: blur(60px);
+      animation: move 6s infinite alternate ease-in-out;
+      z-index: 0;
+    }
+    @keyframes move {
+      0% { transform: translate(-30%, -30%); }
+      100% { transform: translate(30%, 30%); }
     }
   </style>
 </head>
 <body>
 
-  <!-- الشعار -->
-    <img src="logo.png" alt="شعار FrameFree">
+  <div class="glow"></div>
 
-  <!-- العنوان والنص -->
+  <img src="logo.png" alt="شعار FrameFree">
+
   <h1>ابدأ رحلتك مع FrameFree</h1>
   <p>
     🖥️ أنشئ مجلد خاص بك على جهازك.<br>
@@ -66,7 +95,6 @@
     ⚡ اجعل صفحتك جزءًا من ثورة FrameFree.
   </p>
 
-  <!-- الأزرار -->
   <div class="buttons">
     <a href="index.html">⬅️ العودة للصفحة الرئيسية</a>
     <a href="https://github.com/new" target="_blank">🚀 ابدأ مشروعك الآن</a>
@@ -74,6 +102,7 @@
 
 </body>
 </html>
+
 
 
 
