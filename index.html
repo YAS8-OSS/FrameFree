@@ -34,19 +34,21 @@
       margin-bottom: 1rem;
     }
     button {
-      background-color: #00ffe0;
-      color: #0f0f0f;
-      border: none;
+      background-color: transparent;
+      color: #ffffff; /* لون النص أبيض */
+      border: 2px solid #00ffe0;
       padding: 1rem 3rem;
       font-size: 1.3rem;
       border-radius: 12px;
       cursor: pointer;
       box-shadow: 0 0 20px #00ffe0;
       animation: glow 2s infinite alternate;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      text-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0;
     }
     button:hover {
       background-color: #00c7b3;
+      color: #0f0f0f;
       transform: scale(1.05);
     }
     @keyframes glow {
@@ -63,7 +65,6 @@
 
   <h1>FrameFree</h1>
 
-  
   <p>
     اصنع نظامك الخاص.<br>
     لا تتبع أحد.<br>
