@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>إعداد مشروع إبداعي - FrameFree</title>
+  <title>إعداد مشروع كتاب - FrameFree</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container" role="main">
-    <h2>ابدأ مشروعك الإبداعي الآن!</h2>
+    <h2>إعداد مشروع كتاب جديد</h2>
     <form>
-      <input type="text" placeholder="اسم المشروع أو فكرته" required aria-label="اسم المشروع أو فكرته" />
-      <input type="text" placeholder="اكتب نوع المشروع أو تفاصيله (كتاب، قصة، مدونة... أو أي فكرة لديك)" required aria-label="نوع المشروع أو تفاصيله" />
-      <button type="submit">ابدأ مشروعك</button>
+      <input type="text" placeholder="اسم المشروع" required aria-label="اسم المشروع" />
+      <select aria-label="نوع المشروع" required>
+        <option value="كتاب" selected>كتاب</option>
+      </select>
+      <button type="submit">ابدأ المشروع</button>
     </form>
   </div>
 </body>
 </html>
-
