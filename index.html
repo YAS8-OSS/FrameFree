@@ -3,107 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FrameFree - اصنع نظامك الخاص</title>
+  <title>FrameFree - البداية</title>
   <style>
     body {
-      background-color: #0f0f0f;
-      color: #00ffe0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
-      text-align: center;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #2d0057);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       overflow: hidden;
-      position: relative;
     }
-
-    /* الخلفية المتحركة */
-    .background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0,255,224,0.2) 0%, transparent 70%) center/20% 20% repeat;
-      animation: moveBackground 15s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes moveBackground {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(-50%, -50%); }
-    }
-
-    h1, p, button {
-      z-index: 1;
-      position: relative;
-    }
-
     h1 {
-      font-size: 4rem;
-      margin-bottom: 1rem;
+      font-size: 3rem;
+      margin-bottom: 20px;
     }
-
     p {
-      max-width: 600px;
-      font-size: 1.5rem;
-      line-height: 1.8;
-      color: #ffffff;
-      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.8;
     }
-
-    .slogan {
-      font-size: 1.3rem;
-      color: #7fffea;
-      margin-bottom: 1rem;
-    }
-
-    button {
-      background-color: transparent;
-      color: #ffffff;
-      border: 2px solid #00ffe0;
-      padding: 1rem 3rem;
-      font-size: 1.3rem;
-      border-radius: 12px;
+    .start-btn {
+      padding: 15px 35px;
+      background: #9400d3;
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      border-radius: 8px;
       cursor: pointer;
-      box-shadow: 0 0 20px #00ffe0;
-      animation: glow 2s infinite alternate;
-      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      transition: background 0.3s ease;
     }
-
-    button:hover {
-      background-color: rgba(0, 255, 224, 0.1);
-      transform: scale(1.05);
-      color: #00ffe0;
+    .start-btn:hover {
+      background: #b300ff;
     }
-
-    @keyframes glow {
-      from {
-        box-shadow: 0 0 10px #00ffe0, 0 0 20px #00ffe0, 0 0 30px #00ffe0;
-      }
-      to {
-        box-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0, 0 0 60px #00ffe0;
-      }
+    .instructions {
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="background"></div>
+  <h1>مرحبًا بك في FrameFree</h1>
+  <p>اضغط وابدأ رحلتك الخاصة.</p>
+  <button class="start-btn" onclick="showInstructions()">ابدأ الآن</button>
+  <div class="instructions" id="instructions">
+    إذا غط عليه القي توجيهات 👀
+  </div>
 
-  <h1>FrameFree</h1>
-
-  <p>
-    اصنع نظامك الخاص.<br>
-    لا تتبع أحد.<br>
-    هنا تبدأ ثورتك.<br>
-    <strong>كُن أنت النظام.</strong>
-  </p>
-
-  <button onclick="location.href='start.html'">ابدأ الآن</button>
+  <script>
+    function showInstructions() {
+      document.getElementById("instructions").style.opacity = 1;
+    }
+  </script>
 
 </body>
 </html>
