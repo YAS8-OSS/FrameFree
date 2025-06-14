@@ -1,54 +1,134 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
-body {
+/* reset بسيط */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Cairo', sans-serif;
-  background: linear-gradient(135deg, #2d0057, #8e2de2);
-  color: #fff;
+  box-sizing: border-box;
+}
+
+/* الخطوط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap');
+
+body {
+  font-family: 'Cairo', 'Amiri', serif, sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fefefe;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  height: 100vh;
-  text-align: center;
-}
-
-.container {
-  max-width: 500px;
   padding: 20px;
+  line-height: 1.6;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
-  animation: slideIn 1s ease forwards;
+/* الحاويات الأساسية */
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 30px 40px;
+  border-radius: 25px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+  backdrop-filter: saturate(180%) blur(20px);
+  margin-bottom: 40px;
+  user-select: none;
 }
 
+/* العناوين */
+h1, h2, h3 {
+  color: #ffdd57;
+  text-shadow: 0 0 10px #ffd700aa;
+  font-family: 'Amiri', serif;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+}
+
+/* الفقرات */
 p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
-  opacity: 0;
-  animation: fadeIn 2s ease forwards;
-  animation-delay: 0.5s;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #e0e7ff;
+  margin-bottom: 18px;
 }
 
-.btn {
-  background-color: #ff9800;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 1.2rem;
+/* الأزرار */
+button, .btn {
+  background: linear-gradient(90deg, #ffb347, #ffcc33);
+  color: #3b2e00;
+  padding: 14px 0;
+  width: 100%;
   border: none;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s, transform 0.3s;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px #ffb347aa;
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+  font-family: 'Cairo', sans-serif;
+  user-select: none;
 }
 
-.btn:hover {
-  background-color: #e65100;
+button:hover, .btn:hover {
+  background: linear-gradient(90deg, #ffcc33, #ffb347);
   transform: scale(1.05);
+  box-shadow: 0 12px 30px #ffcc33cc;
 }
 
-@keyframes slideIn {
-  from {transform: translateY(-50px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
+/* المدخلات والنماذج */
+input[type="text"], select {
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2a3b5b;
+  background: linear-gradient(145deg, #ffffff, #d1d9f0);
+  box-shadow: 8px 8px 16px #b3bce7,
+              -8px -8px 16px #ffffff;
+  margin-bottom: 28px;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  font-family: 'Cairo', sans-serif;
+}
+
+input[type="text"]:focus, select:focus {
+  outline: none;
+  background: linear-gradient(145deg, #e6f0ff, #aac4ff);
+  box-shadow: 4px 4px 12px #84a2ff,
+              -4px -4px 12px #e7f0ff;
+  color: #1a2a55;
+}
+
+/* تنسيق الصور */
+img.logo {
+  max-width: 130px;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+/* رابط شفاف */
+a {
+  color: #ffd700;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #fff700;
+  text-decoration: underline;
+}
+
+/* تجاوب */
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+    margin-bottom: 25px;
+  }
+  h1, h2 {
+    font-size: 1.9rem;
+  }
+  input[type="text"], select {
+    font-size: 1rem;
+  }
+  button, .btn {
+    font-size: 1.1rem;
+  }
 }
