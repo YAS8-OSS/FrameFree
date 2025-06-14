@@ -4,132 +4,245 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FrameFree - تصميم ويب بسيط واحترافي</title>
+  <!-- رابط خط Google Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- رابط Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    /* إعدادات أساسية */
     body {
-      font-family: 'Arial', sans-serif;
-      background: #f0f4f8;
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      color: #fff;
+      user-select: none;
     }
     header {
-      background: #4a90e2;
-      color: white;
       width: 100%;
-      padding: 15px 0;
+      padding: 20px 0;
       text-align: center;
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.2);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
     #modeSelection {
-      margin: 30px 0;
+      margin: 40px 0;
       text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 25px 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(8px);
+      user-select: none;
+    }
+    #modeSelection p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      letter-spacing: 1.2px;
     }
     #modeSelection button {
-      background: #4a90e2;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b);
       border: none;
-      color: white;
-      padding: 12px 25px;
-      font-size: 1rem;
-      margin: 0 10px;
-      border-radius: 6px;
+      color: #fff;
+      padding: 14px 30px;
+      font-size: 1.1rem;
+      margin: 0 15px;
+      border-radius: 50px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      font-weight: 700;
+      box-shadow: 0 6px 12px rgba(255,126,95,0.6);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      user-select: none;
     }
     #modeSelection button:hover {
-      background: #357abd;
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(255,126,95,0.9);
+    }
+    #modeSelection button i {
+      font-size: 1.3rem;
     }
     #app {
       width: 90%;
-      max-width: 900px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      padding: 20px;
-      display: none; /* نعرضه بعد اختيار الوضع */
+      max-width: 960px;
+      background: #fff;
+      color: #333;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      padding: 25px 30px;
+      display: none;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      user-select: text;
+    }
+    #toolbar {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
     }
     #toolbar button {
-      padding: 10px 18px;
-      font-size: 1rem;
-      border: 1px solid #4a90e2;
-      border-radius: 6px;
-      background: white;
-      color: #4a90e2;
+      flex: 1;
+      min-width: 140px;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      border: 2px solid #2575fc;
+      border-radius: 12px;
+      background: #2575fc;
+      color: #fff;
       cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
+      font-weight: 700;
+      box-shadow: 0 6px 14px rgba(37,117,252,0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
     }
     #toolbar button:hover {
-      background: #4a90e2;
-      color: white;
+      background: #1a4dbb;
+      box-shadow: 0 8px 24px rgba(26,77,187,0.9);
     }
     #preview {
-      margin-top: 20px;
-      border: 1px solid #ddd;
-      min-height: 300px;
-      border-radius: 6px;
-      padding: 15px;
-      background: #fafafa;
+      border: 2px dashed #bbb;
+      min-height: 320px;
+      border-radius: 14px;
+      padding: 20px;
+      background: #f9f9f9;
+      color: #333;
       overflow-y: auto;
+      user-select: text;
     }
-    /* إضافات للمحترفين */
+    #preview p {
+      border: 1px dashed #2575fc;
+      padding: 8px 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: text;
+      min-height: 30px;
+      outline: none;
+      transition: box-shadow 0.3s ease;
+      user-select: text;
+    }
+    #preview p:focus {
+      box-shadow: 0 0 6px 2px #2575fc;
+      border-color: #2575fc;
+    }
+    #preview img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      user-select: none;
+    }
     #advancedTools {
       margin-top: 20px;
-      padding: 15px;
-      background: #e1eaff;
-      border-radius: 6px;
+      padding: 20px;
+      background: #eef5ff;
+      border-radius: 14px;
       display: none;
+      user-select: text;
+    }
+    #advancedTools p {
+      font-weight: 700;
+      color: #2575fc;
+      margin-bottom: 12px;
     }
     #advancedTools textarea {
       width: 100%;
-      height: 150px;
-      font-family: monospace;
+      height: 180px;
+      font-family: 'Courier New', Courier, monospace;
       font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #4a90e2;
-      padding: 10px;
+      border-radius: 14px;
+      border: 2px solid #2575fc;
+      padding: 15px;
       resize: vertical;
+      color: #333;
     }
     #advancedTools button {
-      margin-top: 10px;
-      background: #357abd;
+      margin-top: 15px;
+      background: #2575fc;
       color: white;
       border: none;
-      padding: 10px 20px;
+      padding: 12px 26px;
       cursor: pointer;
-      border-radius: 6px;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 14px;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    #advancedTools button:hover {
+      background: #1a4dbb;
+    }
+    /* Scrollbar لطيف للمعاينة */
+    #preview::-webkit-scrollbar {
+      width: 10px;
+    }
+    #preview::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 14px;
+    }
+    #preview::-webkit-scrollbar-thumb {
+      background: #2575fc;
+      border-radius: 14px;
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      #toolbar {
+        flex-direction: column;
+      }
+      #toolbar button {
+        min-width: 100%;
+      }
+      #modeSelection button {
+        margin: 10px 0;
+        width: 140px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>FrameFree - أداة تصميم الويب للمبتدئين والمحترفين</header>
+<header>
+  <i class="fas fa-paint-brush"></i> FrameFree - أداة تصميم ويب للمبتدئين والمحترفين
+</header>
 
-<div id="modeSelection">
+<div id="modeSelection" role="region" aria-label="اختيار وضع المستخدم">
   <p>اختر وضع الاستخدام:</p>
-  <button id="beginnerBtn">مبتدئ</button>
-  <button id="proBtn">محترف</button>
+  <button id="beginnerBtn" aria-pressed="false" aria-label="وضع المبتدئين">
+    <i class="fas fa-child"></i> مبتدئ
+  </button>
+  <button id="proBtn" aria-pressed="false" aria-label="وضع المحترفين">
+    <i class="fas fa-user-cog"></i> محترف
+  </button>
 </div>
 
-<div id="app">
+<div id="app" role="main" aria-live="polite" aria-label="تطبيق التصميم">
 
-  <div id="toolbar">
-    <button id="addTextBtn">أضف نص</button>
-    <button id="addImageBtn">أضف صورة</button>
+  <div id="toolbar" role="toolbar" aria-label="أدوات التصميم">
+    <button id="addTextBtn" aria-label="إضافة نص">
+      <i class="fas fa-font"></i> أضف نص
+    </button>
+    <button id="addImageBtn" aria-label="إضافة صورة">
+      <i class="fas fa-image"></i> أضف صورة
+    </button>
   </div>
 
-  <div id="preview" aria-label="معاينة المحتوى">
-    <!-- هنا راح تظهر العناصر -->
+  <div id="preview" tabindex="0" aria-label="معاينة المحتوى">
+    <!-- يظهر هنا النصوص والصور -->
   </div>
 
-  <div id="advancedTools">
+  <div id="advancedTools" aria-label="محرر الكود المتقدم">
     <p>تعديل الكود مباشرة:</p>
-    <textarea id="codeEditor"></textarea>
-    <button id="applyCodeBtn">تطبيق التعديلات</button>
+    <textarea id="codeEditor" aria-multiline="true" aria-label="محرر كود HTML"></textarea>
+    <button id="applyCodeBtn" aria-label="تطبيق التعديلات">تطبيق التعديلات</button>
   </div>
 
 </div>
@@ -144,7 +257,14 @@
   const codeEditor = document.getElementById('codeEditor');
   const applyCodeBtn = document.getElementById('applyCodeBtn');
 
+  // تحديث حالة أزرار الوضع
+  function setModeButtons(selected) {
+    beginnerBtn.setAttribute('aria-pressed', selected === 'beginner' ? 'true' : 'false');
+    proBtn.setAttribute('aria-pressed', selected === 'pro' ? 'true' : 'false');
+  }
+
   beginnerBtn.addEventListener('click', () => {
+    setModeButtons('beginner');
     app.style.display = 'flex';
     toolbar.style.display = 'flex';
     advancedTools.style.display = 'none';
@@ -154,6 +274,7 @@
   });
 
   proBtn.addEventListener('click', () => {
+    setModeButtons('pro');
     app.style.display = 'flex';
     toolbar.style.display = 'flex';
     advancedTools.style.display = 'block';
@@ -162,25 +283,21 @@
     document.getElementById('modeSelection').style.display = 'none';
   });
 
-  // زر إضافة نص
+  // إضافة نص قابل للتعديل
   document.getElementById('addTextBtn').addEventListener('click', () => {
     const p = document.createElement('p');
     p.textContent = 'نص جديد قابل للتعديل';
     p.contentEditable = true;
-    p.style.border = '1px dashed #4a90e2';
-    p.style.padding = '5px';
-    p.style.borderRadius = '4px';
-    p.style.marginBottom = '8px';
+    p.tabIndex = 0;
     preview.appendChild(p);
+    p.focus();
   });
 
-  // زر إضافة صورة (رابط صورة ثابتة مؤقتة)
+  // إضافة صورة تجريبية
   document.getElementById('addImageBtn').addEventListener('click', () => {
     const img = document.createElement('img');
-    img.src = 'https://via.placeholder.com/300x150?text=صورة+تجريبية';
+    img.src = 'https://via.placeholder.com/320x180?text=صورة+تجريبية';
     img.alt = 'صورة تجريبية';
-    img.style.maxWidth = '100%';
-    img.style.marginBottom = '8px';
     preview.appendChild(img);
   });
 
@@ -190,14 +307,12 @@
     preview.innerHTML = code;
   });
 
-  // تحديث الكود في المحرر تلقائياً عندما يتغير المعاينة (للمحترفين)
+  // تحديث المحرر تلقائياً عند تغييرات المعاينة (للوضع المحترف)
   const observer = new MutationObserver(() => {
     codeEditor.value = preview.innerHTML;
   });
   observer.observe(preview, { childList: true, subtree: true });
-
 </script>
 
 </body>
 </html>
-
