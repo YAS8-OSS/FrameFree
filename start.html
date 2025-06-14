@@ -2,79 +2,148 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>إعداد مشروع كتاب - FrameFree</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap" rel="stylesheet" />
   <style>
+    /* الخطوط */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', 'Amiri', serif, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fefefe;
+      overflow: hidden;
+    }
+
+    /* خلفية متدرجة متحركة خفيفة */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, #3a8dde, #1e3c72 70%);
+      animation: bgPulse 20s ease-in-out infinite alternate;
+      z-index: -1;
+      filter: blur(100px);
+      opacity: 0.8;
+    }
+
+    @keyframes bgPulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+    }
+
     .form-container {
-      background: rgba(40, 44, 52, 0.9);
-      padding: 30px;
-      border-radius: 18px;
-      max-width: 420px;
-      margin: 50px auto;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-      backdrop-filter: blur(12px);
-      color: #f0f0f0;
-      font-weight: 600;
-      font-size: 1.15rem;
-      font-family: 'Cairo', sans-serif;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px 45px;
+      border-radius: 25px;
+      max-width: 460px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      backdrop-filter: saturate(180%) blur(20px);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
+    }
+    .form-container:hover {
+      box-shadow: 0 0 60px #6cb7ffcc;
     }
 
     h2 {
-      margin-bottom: 25px;
-      text-align: center;
-      color: #ffcc00;
-      text-shadow: 1px 1px 3px #222;
+      margin-bottom: 30px;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #ffdd57;
+      text-shadow: 0 0 12px #ffd700aa;
+      letter-spacing: 1.5px;
+      font-family: 'Amiri', serif;
     }
 
     form input, form select {
       width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 20px;
-      border-radius: 12px;
+      padding: 15px 20px;
+      margin-bottom: 28px;
+      border-radius: 16px;
       border: none;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #222;
-      background-color: #fffbf0;
-      box-shadow: inset 2px 2px 6px #d8c9a8,
-                  inset -2px -2px 6px #fff7db;
-      transition: box-shadow 0.3s ease;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #2a3b5b;
+      background: linear-gradient(145deg, #ffffff, #d1d9f0);
+      box-shadow: 8px 8px 16px #b3bce7,
+                  -8px -8px 16px #ffffff;
+      transition: box-shadow 0.3s ease, background 0.3s ease;
+      font-family: 'Cairo', sans-serif;
     }
 
     form input:focus, form select:focus {
       outline: none;
-      box-shadow: 0 0 8px #ffcc00;
-      background-color: #fffde7;
+      background: linear-gradient(145deg, #e6f0ff, #aac4ff);
+      box-shadow: 4px 4px 12px #84a2ff,
+                  -4px -4px 12px #e7f0ff;
+      color: #1a2a55;
     }
 
     form button {
       width: 100%;
-      background-color: #ffcc00;
-      color: #222;
-      padding: 14px 0;
+      background: linear-gradient(90deg, #ffb347, #ffcc33);
+      color: #3b2e00;
+      padding: 16px 0;
       border: none;
-      border-radius: 18px;
-      font-size: 1.2rem;
-      font-weight: 700;
+      border-radius: 30px;
+      font-size: 1.3rem;
+      font-weight: 800;
       cursor: pointer;
-      box-shadow: 0 5px 15px rgba(255, 204, 0, 0.6);
-      transition: background-color 0.4s ease, transform 0.3s ease;
+      box-shadow: 0 8px 20px #ffb347aa;
+      transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+      font-family: 'Cairo', sans-serif;
     }
 
     form button:hover {
-      background-color: #e6b800;
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(230, 184, 0, 0.8);
+      background: linear-gradient(90deg, #ffcc33, #ffb347);
+      transform: scale(1.07);
+      box-shadow: 0 12px 30px #ffcc33cc;
+    }
+
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 30px 25px;
+        max-width: 90vw;
+      }
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      form input, form select {
+        font-size: 1rem;
+        padding: 12px 16px;
+      }
+
+      form button {
+        font-size: 1.1rem;
+        padding: 14px 0;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="form-container">
+  <div class="form-container" role="main">
     <h2>إعداد مشروع كتاب جديد</h2>
     <form>
-      <input type="text" placeholder="اسم المشروع" required>
-      <select required>
+      <input type="text" placeholder="اسم المشروع" required aria-label="اسم المشروع" />
+      <select aria-label="نوع المشروع" required>
         <option value="كتاب" selected>كتاب</option>
       </select>
       <button type="submit">ابدأ المشروع</button>
