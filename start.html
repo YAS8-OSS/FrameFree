@@ -1,46 +1,30 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ابدأ مشروعك - FrameFree</title>
+  <title>إعداد مشروع جديد - FrameFree</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #1a0033, #8e2de2);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
     .form-container {
       background: rgba(255, 255, 255, 0.1);
       padding: 25px;
       border-radius: 15px;
       max-width: 400px;
-      width: 90%;
+      margin: auto;
       backdrop-filter: blur(10px);
     }
 
-    h2 {
-      margin-bottom: 20px;
-    }
-
-    input, select {
+    form input, form select {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
-      border: none;
       border-radius: 8px;
+      border: none;
       font-size: 1rem;
     }
 
-    button {
+    form button {
       background-color: #ff9800;
       color: #fff;
       padding: 12px 20px;
@@ -51,7 +35,7 @@
       transition: background-color 0.3s, transform 0.3s;
     }
 
-    button:hover {
+    form button:hover {
       background-color: #e65100;
       transform: scale(1.05);
     }
