@@ -1,134 +1,86 @@
-/* reset بسيط */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* الخطوط */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Amiri&display=swap');
-
-body {
-  font-family: 'Cairo', 'Amiri', serif, sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  color: #fefefe;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  line-height: 1.6;
-}
-
-/* الحاويات الأساسية */
-.container {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px 40px;
-  border-radius: 25px;
-  max-width: 900px;
-  width: 100%;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
-  backdrop-filter: saturate(180%) blur(20px);
-  margin-bottom: 40px;
-  user-select: none;
-}
-
-/* العناوين */
-h1, h2, h3 {
-  color: #ffdd57;
-  text-shadow: 0 0 10px #ffd700aa;
-  font-family: 'Amiri', serif;
-  margin-bottom: 20px;
-  letter-spacing: 1.5px;
-}
-
-/* الفقرات */
-p {
-  font-size: 1.15rem;
-  font-weight: 400;
-  color: #e0e7ff;
-  margin-bottom: 18px;
-}
-
-/* الأزرار */
-button, .btn {
-  background: linear-gradient(90deg, #ffb347, #ffcc33);
-  color: #3b2e00;
-  padding: 14px 0;
-  width: 100%;
-  border: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 8px 20px #ffb347aa;
-  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
-  font-family: 'Cairo', sans-serif;
-  user-select: none;
-}
-
-button:hover, .btn:hover {
-  background: linear-gradient(90deg, #ffcc33, #ffb347);
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px #ffcc33cc;
-}
-
-/* المدخلات والنماذج */
-input[type="text"], select {
-  width: 100%;
-  padding: 14px 20px;
-  border-radius: 16px;
-  border: none;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #2a3b5b;
-  background: linear-gradient(145deg, #ffffff, #d1d9f0);
-  box-shadow: 8px 8px 16px #b3bce7,
-              -8px -8px 16px #ffffff;
-  margin-bottom: 28px;
-  transition: box-shadow 0.3s ease, background 0.3s ease;
-  font-family: 'Cairo', sans-serif;
-}
-
-input[type="text"]:focus, select:focus {
-  outline: none;
-  background: linear-gradient(145deg, #e6f0ff, #aac4ff);
-  box-shadow: 4px 4px 12px #84a2ff,
-              -4px -4px 12px #e7f0ff;
-  color: #1a2a55;
-}
-
-/* تنسيق الصور */
-img.logo {
-  max-width: 130px;
-  margin-bottom: 30px;
-  user-select: none;
-}
-
-/* رابط شفاف */
-a {
-  color: #ffd700;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #fff700;
-  text-decoration: underline;
-}
-
-/* تجاوب */
-@media (max-width: 600px) {
-  .container {
-    padding: 25px 20px;
-    margin-bottom: 25px;
-  }
-  h1, h2 {
-    font-size: 1.9rem;
-  }
-  input[type="text"], select {
-    font-size: 1rem;
-  }
-  button, .btn {
-    font-size: 1.1rem;
-  }
-}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FrameFree - بداية فخمة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-gradient: linear-gradient(135deg, #0f2027, #2c5364 80%, #fff 120%);
+      --accent: #00eaff;
+      --btn-bg: linear-gradient(90deg, #00eaff, #2c5364);
+      --white: #fff;
+    }
+    * {box-sizing: border-box;}
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--main-gradient);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Cairo', sans-serif;
+      color: var(--white);
+      overflow-x: hidden;
+    }
+    .container {
+      background: rgba(255,255,255,0.07);
+      border-radius: 24px;
+      box-shadow: 0 8px 40px rgba(44,83,100,0.13);
+      padding: 48px 32px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    h1 {
+      font-size: 2.7rem;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #00eaff, #2c5364, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 38px;
+    }
+    .main-btn {
+      display: inline-block;
+      padding: 16px 36px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background: var(--btn-bg);
+      color: #111;
+      border: none;
+      border-radius: 32px;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(0,234,255,0.13);
+      transition: all 0.18s cubic-bezier(.4,2,.4,1.5);
+      outline: none;
+    }
+    .main-btn:hover {
+      transform: scale(1.07) translateY(-3px);
+      background: linear-gradient(90deg, #2c5364, #00eaff);
+      color: #fff;
+      box-shadow: 0 8px 36px rgba(0,234,255,0.23);
+    }
+    @media (max-width: 600px) {
+      .container {padding: 34px 10px;}
+      h1 {font-size: 1.8rem;}
+      .main-btn {font-size: 1rem; padding: 12px 18px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>مرحباً بك في FrameFree</h1>
+    <p>
+      هذا هو أفضل تصميم مر على الكوكب.<br>
+      استمتع بتجربة حديثة وفخمة ببساطة وإبداع!
+    </p>
+    <button class="main-btn" onclick="alert('ابدأ الآن! 🚀')">ابدأ الآن</button>
+  </div>
+</body>
+</html>
