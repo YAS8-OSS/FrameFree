@@ -35,6 +35,11 @@
       margin-bottom: 2rem;
     }
 
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
     button {
       background-color: transparent;
       color: #00ffe0;
@@ -46,6 +51,7 @@
       box-shadow: 0 0 20px #00ffe0;
       animation: glow 2s infinite alternate;
       transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+      min-width: 180px;
     }
 
     button:hover {
@@ -95,6 +101,9 @@
     اختر مسارك، ابتكر أفكارك، وكن القائد الذي يصنع المستقبل.<br />
     جاهز للانطلاق؟
   </p>
-  <button onclick="location.href='index.html'">العودة للصفحة الرئيسية</button>
+  <div class="buttons">
+    <button onclick="location.href='index.html'">العودة للصفحة الرئيسية</button>
+    <button onclick="location.href='project.html'">ابدأ مشروعك الآن</button>
+  </div>
 </body>
 </html>
