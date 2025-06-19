@@ -1,54 +1,92 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>حقوق الملكية الفكرية - FrameFree</title>
   <style>
     body {
-      background-color: #0f0f0f;
-      color: #00ffe0;
+      background: linear-gradient(135deg, #3b2f2f, #8a4b32, #d66a2e);
+      color: #f5f5f5;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
       padding: 30px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: rgba(0,0,0,0.6);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #ffb347;
+    }
+    main {
+      flex: 1;
       max-width: 900px;
-      margin: auto;
-      direction: rtl;
+      margin: 0 auto;
       line-height: 1.8;
+      padding: 2rem 0;
     }
-
     h1 {
+      color: #ffd9b0;
+      text-shadow: 0 0 5px #b54e2f;
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
       text-align: center;
-      margin-bottom: 2rem;
-      text-shadow: 0 0 10px #00ffe0;
     }
-
     p {
       font-size: 1.1rem;
       margin-bottom: 1rem;
     }
-
     footer {
+      background-color: rgba(0,0,0,0.6);
+      color: #aaa;
       text-align: center;
-      margin-top: 3rem;
+      padding: 1rem;
       font-size: 0.9rem;
-      color: #888;
     }
   </style>
 </head>
 <body>
-  <h1>حقوق الملكية الفكرية</h1>
+  <header>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="project.html">ابدأ مشروعك</a>
+      <a href="rights.html">الحقوق</a>
+    </nav>
+  </header>
 
-  <p>جميع المحتويات والمواد الفكرية المتعلقة بمشروع <strong>FrameFree</strong>، بما في ذلك التصميمات، الشعار، التوجيهات، النصوص، الشفرات البرمجية، والأفكار، محمية بموجب حقوق الملكية الفكرية.</p>
+  <main>
+    <h1>حقوق الملكية الفكرية</h1>
 
-  <p>يُمنع نسخ أو إعادة استخدام أو إعادة توزيع أي جزء من هذا المشروع دون الحصول على إذن خطي مسبق من المالك.</p>
+    <p>جميع المحتويات والمواد الفكرية المتعلقة بمشروع <strong>FrameFree</strong>، بما في ذلك التصميمات، الشعار، التوجيهات، النصوص، الشفرات البرمجية، والأفكار، محمية بموجب حقوق الملكية الفكرية.</p>
 
-  <p>يُسمح باستخدام المشروع للأغراض التعليمية والشخصية فقط، ولا يجوز استخدامه في أي أغراض تجارية أو ربحية دون موافقة مسبقة.</p>
+    <p>يُمنع نسخ أو إعادة استخدام أو إعادة توزيع أي جزء من هذا المشروع دون الحصول على إذن خطي مسبق من المالك.</p>
 
-  <p>لأي استفسار بخصوص التراخيص أو الاستخدام التجاري، يرجى التواصل عبر البريد الإلكتروني التالي:</p>
-  <p style="color:#fff; font-weight:bold;">yas8@example.com</p>
+    <p>يُسمح باستخدام المشروع للأغراض التعليمية والشخصية فقط، ولا يجوز استخدامه في أي أغراض تجارية أو ربحية دون موافقة مسبقة.</p>
+
+    <p>لأي استفسار بخصوص التراخيص أو الاستخدام التجاري، يرجى التواصل عبر البريد الإلكتروني التالي:</p>
+    <p style="color:#ffb347; font-weight:bold;">yas8@example.com</p>
+  </main>
 
   <footer>
     جميع الحقوق محفوظة © FrameFree 2025
   </footer>
 </body>
 </html>
+
