@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ابدأ مع FrameFree</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
       font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #222, #555);
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,53 +22,52 @@
 
     .container {
       text-align: center;
-      animation: fadeIn 2s ease forwards;
+      animation: fadeIn 1.5s ease forwards;
     }
 
     h1 {
       font-size: 3rem;
-      color: #222;
-      margin-bottom: 20px;
-      animation: slideUp 2s ease forwards;
+      margin-bottom: 15px;
+      animation: slideUp 1s ease forwards;
     }
 
     p {
       font-size: 1.2rem;
-      color: #555;
-      margin-bottom: 30px;
-      animation: fadeIn 3s ease forwards;
+      margin-bottom: 25px;
+      color: #ddd;
+      animation: fadeIn 2s ease forwards;
     }
 
     .start-btn {
-      background-color: #222;
+      background: linear-gradient(45deg, #ff7b00, #ff4500);
       color: #fff;
       padding: 15px 40px;
-      font-size: 1.2rem;
       border: none;
-      border-radius: 10px;
+      border-radius: 50px;
+      font-size: 1.1rem;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
       animation: pulse 2s infinite;
     }
 
     .start-btn:hover {
-      background-color: #444;
+      transform: scale(1.05);
+      background: linear-gradient(45deg, #ff5500, #cc3300);
     }
 
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     @keyframes slideUp {
-      from {transform: translateY(20px); opacity: 0;}
-      to {transform: translateY(0); opacity: 1;}
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); }
+      0%, 100% { transform: scale(1); }
       50% { transform: scale(1.05); }
-      100% { transform: scale(1); }
     }
   </style>
 </head>
@@ -77,4 +79,3 @@
   </div>
 </body>
 </html>
-``
